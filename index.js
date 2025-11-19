@@ -5,6 +5,17 @@
  */
 
 class Creature {
+  constructor(name, habitat) {
+    this.name = name
+    this.habitat = habitat
+
+  }
+  describe() {
+    return `${this.name} lives in the ${this.habitat}.`
+  }
+  sleep() {
+    return `${this.name} falls asleep in the ${this.habitat}. 😴`
+  }
   // write your code here
 }
 
@@ -15,7 +26,15 @@ class Creature {
  */
 
 class Dragon extends Creature {
- //write your code here
+  constructor(name, habitat, firePower) {
+    super(name, habitat)
+    this.firePower = firePower
+
+  }
+  specialMove() {
+    return `${this.name} breathes fire with ${this.firePower} intensity! 🔥`
+  }
+  //write your code here
 }
 
 /**
@@ -25,8 +44,20 @@ class Dragon extends Creature {
  */
 
 class Unicorn extends Creature {
+  constructor(name, habitat, sparkleLevel) {
+    super(name, habitat)
+    this.sparkleLevel = sparkleLevel
+  }
+  specialMove() {
+    return `${this.name} heals allies with a sparkle level of ${this.sparkleLevel}! ✨`
+  }
   //write your code here
 }
+
+let creature1 = new Creature('Luffy', 'House')
+console.log(creature1.sleep())
+console.log(creature1.describe())
+
 
 // Export the classes for testing
 module.exports = { Creature, Dragon, Unicorn };
